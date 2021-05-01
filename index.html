@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Avatar Image By Name | Arsl Thaheem</title>
+    <style>
+        body {
+            background-color: black;
+            transition: all 2s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wraper {
+            width: 100%;
+            height: 100vh;
+            background-image: url(c5b59b53b57f035381cee5c24e44950c.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.6;
+            position: fixed;
+            top: 0;
+        }
+
+        .box {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 50%;
+            border-radius: 20px;
+            box-shadow: 10px 10px 25px black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 40px;
+
+        }
+
+        .box-input #input {
+            width: 40%;
+            height: 55px;
+            font-size: 22px;
+            padding: 15px;
+            text-align: center;
+            border: none;
+            background-color: transparent;
+            border-bottom: 2px solid black;
+            margin-left: 20%;
+            margin-right: 10px;
+            margin-bottom: 25px;
+            transition: all 1s;
+            text-transform: uppercase;
+        }
+
+        .box-input #input:focus {
+            width: 80%;
+            margin-left: 0%;
+        }
+
+        .box-input #submit {
+            width: 17%;
+            height: 55px;
+            padding: 15px;
+            font-size: 20px;
+            background-color: chartreuse;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .box-img {
+            /* border: 2px solid black; */
+            width: 80%;
+            /* height: 80%; */
+            margin: 50px auto;
+        }
+
+        .box-img img {
+            border: 2px solid black;
+            border-radius: 25px;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        footer {
+            background-color: #535c68;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #f6e58d;
+            text-decoration: none;
+        }
+
+        h1 {
+            background-color: black;
+            padding: 10px 50px;
+            color: white;
+            text-align: center;
+            position: fixed;
+            top: -50px;
+            left: 0%;
+            width: 100%;
+
+        }
+
+        @media screen and (max-width:650px) {
+            .box {
+                width: 90%;
+                padding: 10px;
+            }
+
+            .box-input #input {
+                height: 40px;
+                font-size: 14px;
+            }
+
+            .box-input #input:focus {
+                width: 75%;
+            }
+
+            .box-input #submit {
+                height: 40px;
+                font-size: 10px;
+                padding: 5px;
+            }
+
+            .box-img {
+                margin-top: 15px;
+
+            }
+            h1{
+                font-size: 15px;
+                top: -40px;
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wraper">
+    </div>
+    <div class="box">
+        <h1>اپنا نام لکھیں اور کارٹون حاصل کریں</h1>
+        <div class="box-input">
+            <input type="text" placeholder="Type Your Name" id="input" name="name" onkeyup="enterKEy()" autocomplete="off">
+            <input type="button" value="Submit" id="submit" onclick="fecthData()">
+        </div>
+        <div class="box-img">
+            <img src="exp.jpg" alt="Sorry No Img" draggable="false" id="img">
+        </div>
+    </div>
+
+    <footer>
+        <p>Copy Right @2021 | <a href="https://www.facebook.com/ThaheemSahab786" target="_blank">Arsl Thaheem</a> | <a
+                href="tel:+923445982251">Contact</a> </p>
+    </footer>
+
+
+    <script>
+        var input = document.querySelector("#input");
+        input = input.value;
+        var demoClass = "https://joeschmoe.io/api/v1/random";
+
+
+        function fecthData() {
+            document.getElementsByTagName("img")[0].setAttribute("src", demoClass + input);
+            document.getElementById("input").value = "";
+        }
+        function enterKEy() {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("submit").click();
+            }
+        }
+    </script>
+</body>
+
+</html>
