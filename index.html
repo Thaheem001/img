@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    meta name="description" content="اپنا نام لکھیں اور اپنے نام کیساتھ ملتا جلتا کارٹون حاسل کریں۔ارسل تھہیم فرام کوٹمومن/>
-
     <title>Check Avatar Image By Name | Arsl Thaheem</title>
     <style>
         body {
@@ -144,7 +142,8 @@
                 margin-top: 15px;
 
             }
-            h1{
+
+            h1 {
                 font-size: 15px;
                 top: -40px;
                 left: 0%;
@@ -159,7 +158,8 @@
     <div class="box">
         <h1>اپنا نام لکھیں اور کارٹون حاصل کریں</h1>
         <div class="box-input">
-            <input type="text" placeholder="Type Your Name" id="input" name="name" onkeyup="enterKEy()" autocomplete="off">
+            <input type="text" placeholder="Type Your Name" id="input" name="name" onkeyup="enterKEy()"
+                autocomplete="off">
             <input type="button" value="Submit" id="submit" onclick="fecthData()">
         </div>
         <div class="box-img">
@@ -172,16 +172,16 @@
                 href="tel:+923445982251">Contact</a> </p>
     </footer>
 
-
     <script>
-        var input = document.querySelector("#input");
-        input = input.value;
-        var demoClass = "https://joeschmoe.io/api/v1/random";
+        var input = document.getElementById("input");
 
 
         function fecthData() {
-            document.getElementsByTagName("img")[0].setAttribute("src", demoClass + input);
+            let img = document.getElementById("img");
+            var demoClass = "https://joeschmoe.io/api/v1/" + input.value;
+            img.setAttribute("src", demoClass);
             document.getElementById("input").value = "";
+            console.log(demoClass);
         }
         function enterKEy() {
             if (event.keyCode === 13) {
